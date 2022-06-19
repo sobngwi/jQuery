@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.1  Add json </title>
+    <style>
+        #song, #artist, #btnAdd{
+            font-size: 1.5em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #btnAdd{
+            margin-top: 10px;
+        }
+        table{
+            width: 400px;
+            margin-top: 10px;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        td, th{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        p{
+            text-align: center;
+            font-size: .8em;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <body>
+        <h1>Favorite Songs</h1>
+        <label for="song">Song</label>
+        <input type="text" id="song"></input>
+        <label for="artist">Artist</label>
+        <input type="text" id="artist"></input>
+        <br/><button id="btnAdd">Add Song</button>
+        <table>
+            <tr>
+                <th>Song</th>
+                <th>Artiste</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+        <script>
+            let songs = [];
+    
+            $("#btnAdd").click(function(){
+                let song = $("#song").val();
+                let artist = $("#artist").val();
+                let data = [{songName: song, songArtist: artist}]
+                songs.push(data);
+                $("#song").val('');
+                $("#artist").val('');
+               
+                displayTable();
+ 
+            })
+            function addDeleteFunction(e){
+                $("table button").click(function(e){
+                    let toDelete =e.currentTarget.parentElement.parentElement.id;
+                    console.log("id to delete:" + toDelete);
+                    songs.splice(toDelete, 1);
+                    displayTable();
+                })
+            }
+
+            function displayTable(){
+                $("table").html("<tr><th>song</th><th>artiste</th><th>Delete</th></tr>");
+                $.each(songs, function(k,v){
+                    let songName = v[0].songName;
+                    let songArtist = v[0].songArtist;
+                    $('table tr:last').after("<tr id='" + k + "'><td>" + songName + "</td><td>" + songArtist + "</td><td><button id='delete" + k + "'>Delete" + "</button></td></tr>");
+                   
+                });
+                $("table button").click(function(e){
+                    let toDelete = e.currentTarget.parentElement.parentElement.id;
+                                     
+                    songs.splice(toDelete, 0);
+                    displayTable();
+                });
+                addDeleteFunction();
+            }
+        </script>
+    </body>
+</head>
+</html>

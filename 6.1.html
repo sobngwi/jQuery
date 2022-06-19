@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.1  State Capitals </title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        p{
+            text-align: center;
+            font-size: .8em;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.getJSON("capitals.json", function(data){    
+                $.each(data, function(key,val){
+                    const state = key;
+                    const capital = val.capital;
+                    $("table").append("<tr><td>" + state + "</td><td>"  + capital + "</td></tr>");
+                });
+            });
+            $("p:first").html("Starting");
+            $("p:last").html("The end");
+        });
+    </script>
+ </head> 
+ <body>
+    <p> xx</p>
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Capital</th>
+        </tr>
+    </table>
+    <p> xx</p>
+ </body>      
+</html>        
