@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.6 Extended Selectors 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(function(){
+               // $("div:first").hide();
+               // $("div:last").hide();
+               $("div:nth-child(2)").hide(); // starts at 1
+        });
+    });
+    </script>
+    <style>
+        div{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            margin-bottom: 10px;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="boxA">
+        <p>This is boxA</p>
+    </div>
+    <div id="boxB">
+        <p>This is boxB</p>
+    </div>
+    <div id="boxC">
+        <p>This is boxC</p>
+    </div>
+</body>   
+</html>
