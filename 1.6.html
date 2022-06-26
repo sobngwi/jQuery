@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.6 Basic Selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(function(){
+                
+                $("div").css("background-color", "blue");
+                $("p").css("font-weight", "bold");
+                $("#boxB").slideDown();
+                $("#boxC").css("background-color", "red");
+                $(".main").slideUp();
+                $(".b").css("font-family", "Arial");
+        });
+    });
+    </script>
+    <style>
+        div{
+            border: 1px solid black;
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            margin-bottom: 10px;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="boxA" class="main"><p>This is boxA</p></div>
+    <div id="boxB" class="b">This is boxB</div>
+    <div id="boxC">This is boxC</div>
+</body>   
+</html>
