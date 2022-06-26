@@ -31,6 +31,14 @@
             width: 100%;
             margin-bottom: 20px;
         }
+        #container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: 0 auto;
+            background: #A0C5E8;
+            padding: 10px 0;
+        }
       
     </style>
         <script>
@@ -59,9 +67,11 @@
         </script>
 </head>
 <body>
+    <div id="container">
     <div id="effectsTargetA"></div>
     <div id="effectsTargetB"></div>
     <div id="effectsTargetC"></div>
+    </div>
     <div class="clear"></div>
     <button id="btnEffectBlue">Hide Blue</button>
     <button id="btnEffectGray">Hide Gray</button>
