@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 visual effect</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+       
+       #effectsTargetA{
+           background-color: #2175bc;
+           height: 30px;
+           width: 10%;
+           margin-bottom: 20px;
+        }
+        #effectsTargetB{
+           background-color: gray;
+           height: 30px;
+           width: 10%;
+           margin-bottom: 20px;
+        }
+        #effectsTargetC{
+           background-color: orange;
+           height: 30px;
+           width: 10%;
+           margin-bottom: 20px;
+        }
+        #btnEffectBlue, #btnEffectGray, #btnEffectOrange, #btnEffectShowAll{
+            height: 40px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+      
+    </style>
+        <script>
+          $(function(){  
+            $("body").click(function(event){
+                let target = event.target.id;
+               console.log(target);
+               switch(target){
+                case "btnEffectBlue":
+                    $("#effectsTargetA").hide();
+                    break;
+                case "btnEffectGray":
+                    $("#effectsTargetB").hide();
+                    break; 
+                case "btnEffectOrange":
+                    $("#effectsTargetC").hide();
+                    break;
+                    case "btnEffectShowAll":
+                    $("#effectsTargetA").show();
+                    $("#effectsTargetB").show();
+                    $("#effectsTargetC").show();
+                    break;           
+               }
+        });
+    })
+        </script>
+</head>
+<body>
+    <div id="effectsTargetA"></div>
+    <div id="effectsTargetB"></div>
+    <div id="effectsTargetC"></div>
+    <div class="clear"></div>
+    <button id="btnEffectBlue">Hide Blue</button>
+    <button id="btnEffectGray">Hide Gray</button>
+    <button id="btnEffectOrange">Hide Orange</button>
+    <button id="btnEffectShowAll">Show All</button>
+</body>   
+</html>
