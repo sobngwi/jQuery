@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 visual effect</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        #effectsTarget{
+           background-color: #2175bc;
+           height: 300px;
+           width: 100%;
+           margin-bottom: 20px;
+        }
+        #btnEffect{
+            height: 40px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+        <script>
+            let divVisible = true;
+            $(function(){
+                $("#btnEffect").click(function(){
+                if ( divVisible ) {          
+                    $("#effectsTarget").fadeIn(); // add style display:none;
+                    divVisible = !divVisible;
+                }else{
+                        $("#effectsTarget").fadeOut();
+                    divVisible = !divVisible;
+                }
+                }) 
+        });
+        </script>
+</head>
+<body>
+    <div id="effectsTarget"></div>
+    <button id="btnEffect">Show Effect</button>
+</body>   
+</html>
