@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.2 each action runs without the benefice of the selector</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(() =>{
+            "use strict"
+            console.log('Loading the page')
+           $.each( ()=> {
+            console.log('element', this)
+            console.log('element', z)
+           })
+    })
+    </script>
+    <style>
+        #box{
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>   
+</html>

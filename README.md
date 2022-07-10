@@ -1,6 +1,8 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/V17498?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
+What you can do with jQuery:
+- Create visual effets
+- Manipulating HTML in the DOM
+- Manipulating CSS in the DOM
+- Enhancing Forms
+- Simplifying Events
+- API Communication / AJAX.
 
-# jQuery-for-Application-Development-From-Fundamentals-to-jQuery-Projects-
-jQuery for Application Development: From Fundamentals to jQuery Projects, by Packt Publishing

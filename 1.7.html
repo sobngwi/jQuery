@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1.6 Extended Selectors</title>
+    <title>1.7 Complex Selectors</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(function(){
-            $(function(){
-                
-               /* $("div").css("background-color", "blue");
-                $("p").css("font-weight", "bold");
-                $("#boxB").slideDown();
-                $("#boxC").css("background-color", "red");
-                $(".main").slideUp();
-                $(".b").css("font-family", "Arial");*/
+           'use strict'
                // $("*").remove();
                // $("div p").hide();
                //$("div > p").hide();
-               //$("[status = 'selected']").hide();
-               $("[status]").hide();
-        });
+              /* $("[status = 'selected']").hide().each(() => {
+                console.log('status selected', this)
+               });*/
+               let selectedElements = 0
+               $("[status]").hide().each(() => {
+                console.log('status selected', ++selectedElements)
+               })
+       
     });
     </script>
     <style>
